@@ -6,21 +6,31 @@ pensar la lógica necesaria para asignarle a cada Persona un Perro y por ultimo,
 la clase Persona, la información del Perro y de la Persona.  */
 package entidades;
 
+import java.util.ArrayList;
+
 public class Perro {
 
     //Atributos
     String nombre;
-    Persona dueno;
+    ArrayList<Persona> dueno;
 
     //Constructor
     public Perro() {
+        this.dueno = new ArrayList();
     }
     
-    public Perro(String nombre, Persona dueno) {
+    public Perro(String nombre) {
+        this.nombre = nombre;
+        this.dueno = new ArrayList();
+    }
+
+    public Perro(String nombre, ArrayList<Persona> dueno) {
         this.nombre = nombre;
         this.dueno = dueno;
     }
+
     
+
 
     //Getter Setter
     public String getNombre() {
@@ -31,27 +41,22 @@ public class Perro {
         this.nombre = nombre;
     }
 
-    public Persona getDueno() {
+    public ArrayList<Persona> getDueno() {
         return dueno;
     }
 
-    public void setDueno(Persona dueno) {
+    public void setDueno(ArrayList<Persona> dueno) {
         this.dueno = dueno;
+    }
+
+    public void setUnDueno(Persona dueno) {
+        this.dueno.add(dueno);
     }
 
     @Override
     public String toString() {
-        return "Perro{" + "nombre=" + nombre + ", dueno=" + dueno + '}';
-    }
-
-
-
-    public String toStringSinDueno() {
-        return "Perro{" + "nombre=" + nombre + '}';
+        return "Perro{" + "nombre=" + nombre + ", dueno=" + dueno.get(0).getNombre() + '}';
     }
 
   
-    
-    
-
 }

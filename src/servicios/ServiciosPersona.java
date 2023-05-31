@@ -34,7 +34,7 @@ public class ServiciosPersona {
     public void personaSinMascota() {
         for (int i = 0; i < personas.size(); i++) {
             if (personas.get(i).getPerros().isEmpty()) {
-                System.out.println(i + ". " + personas.get(i).getNombre() + " " + personas.get(i).getPerros());
+                System.out.println(i + ". " + personas.get(i).getNombre());
             }
         }
     }
