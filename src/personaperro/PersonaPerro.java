@@ -56,7 +56,7 @@ public class PersonaPerro {
         
         
         
-        System.out.println(persona.toString());
+        //System.out.println(persona.toString());
         
         //serviciosPersona.personaConMascota();
         System.out.println("");
