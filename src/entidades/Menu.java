@@ -6,17 +6,29 @@ import servicios.ServiciosPersona;
 
 public class Menu {
     
-    ServiciosPersona sPersona = new ServiciosPersona();
-    ServiciosPerro sPerro = new ServiciosPerro();
-
-    public void Menu() {
-
-
-        Scanner sc = new Scanner(System.in).useDelimiter("\n");
-
+    //Atributos
+    ServiciosPersona sPersona;
+    ServiciosPerro sPerro;
+           
+    //Constructor
+    public Menu() {
+        this.sPersona = new ServiciosPersona();
+        this.sPerro = new ServiciosPerro();
         sPersona.crearPersonasInicio();
         sPerro.creaPerrosInicio();
+    }
+    
+    
+    //Geeter Setter
+    
+    
 
+    //Servicios Menu
+    public void Menu() {
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
+        
+        
+        
         System.out.println("Sistema de adopcion de mascotas por personas (S.A.M.P)");
         System.out.println("Usted tiene " + sPerro.cuentaPerrosSolos() + " mascotas sin dueño y existen " + sPersona.cuentaPersonasSolas() + " interesados ¿que descea hacer?");
         System.out.println("");
@@ -70,6 +82,5 @@ public class Menu {
                 System.out.println("Por favor ingresar un numero dentro del menu");
                 Menu();
         }
-
     }
 }

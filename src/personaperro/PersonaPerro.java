@@ -27,74 +27,74 @@ import servicios.ServiciosPersona;
 public class PersonaPerro {
 
     public static void main(String[] args) {
-        
-        Menu menu = new Menu();
-        menu.Menu();
-        
-        
-        
-        ServiciosPersona serviciosPersona = new ServiciosPersona();
-        ServiciosPerro serviciosPerro = new ServiciosPerro();
-        
-        serviciosPersona.crearPersonasInicio();
-        serviciosPerro.creaPerrosInicio();
-        
-        //System.out.println("Seleccionar persona por id");
-        int personaId = 0;
 
-        //System.out.println("Seleccione un perro por id");
-        int perroId = 0;
+    Menu menu = new Menu();
+    menu.Menu();
         
-        System.out.println("Personas solas: " + serviciosPersona.cuentaPersonasSolas());
-        System.out.println("Perros solos: " + serviciosPerro.cuentaPerrosSolos());
-
-        Persona persona = serviciosPersona.traePersona(personaId);
-        Perro perro = serviciosPerro.traePerro(perroId);
- 
-        //imprime todas las pesonas que no tiene mascota
-        System.out.println("imprime todas las pesonas que no tiene mascota");
-        serviciosPersona.personaSinMascota();
-        System.out.println("");
-
-        //imprime todas las mascotas sin dueno
-        System.out.println("imprime todas las mascotas sin dueno");
-        serviciosPerro.mascotasSinDueno();
-        System.out.println("");
         
-        //adopta mascota
-        persona.setUnPerro(perro);
-        perro.setDueno(persona);
-
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
- 
-        System.out.println("persona.toString");
-        System.out.println(persona.toString());
-        System.out.println("");
         
-        System.out.println("perro.toString");
-        System.out.println(perro.toString());
-        System.out.println("");
-  
-        System.out.println("imprime todas las pesonas que si tiene mascota");
-        serviciosPersona.personaConMascota();
-        System.out.println("");
-        
-        System.out.println("imprime todas las personas sin mascota");
-        serviciosPersona.personaSinMascota();
-        System.out.println("");
-
-        System.out.println("imprime todas las mascotas sin dueno");
-        serviciosPerro.mascotasSinDueno();
-        System.out.println("");
-        
-        System.out.println("mascota con dueno");
-        serviciosPerro.mascotasConDueno();
-        System.out.println("");
-        
-        System.out.println("Personas solas: " + serviciosPersona.cuentaPersonasSolas());
-        System.out.println("Perros solos: " + serviciosPerro.cuentaPerrosSolos());
- 
+//        ServiciosPersona serviciosPersona = new ServiciosPersona();
+//        ServiciosPerro serviciosPerro = new ServiciosPerro();
+//        
+//        serviciosPersona.crearPersonasInicio();
+//        serviciosPerro.creaPerrosInicio();
+//        
+//        //System.out.println("Seleccionar persona por id");
+//        int personaId = 0;
+//
+//        //System.out.println("Seleccione un perro por id");
+//        int perroId = 0;
+//        
+//        System.out.println("Personas solas: " + serviciosPersona.cuentaPersonasSolas());
+//        System.out.println("Perros solos: " + serviciosPerro.cuentaPerrosSolos());
+//
+//        Persona persona = serviciosPersona.traePersona(personaId);
+//        Perro perro = serviciosPerro.traePerro(perroId);
+// 
+//        //imprime todas las pesonas que no tiene mascota
+//        System.out.println("imprime todas las pesonas que no tiene mascota");
+//        serviciosPersona.personaSinMascota();
+//        System.out.println("");
+//
+//        //imprime todas las mascotas sin dueno
+//        System.out.println("imprime todas las mascotas sin dueno");
+//        serviciosPerro.mascotasSinDueno();
+//        System.out.println("");
+//        
+//        //adopta mascota
+//        persona.setUnPerro(perro);
+//        perro.setDueno(persona);
+//
+//        System.out.println("");
+//        System.out.println("");
+//        System.out.println("");
+// 
+//        System.out.println("persona.toString");
+//        System.out.println(persona.toString());
+//        System.out.println("");
+//        
+//        System.out.println("perro.toString");
+//        System.out.println(perro.toString());
+//        System.out.println("");
+//  
+//        System.out.println("imprime todas las pesonas que si tiene mascota");
+//        serviciosPersona.personaConMascota();
+//        System.out.println("");
+//        
+//        System.out.println("imprime todas las personas sin mascota");
+//        serviciosPersona.personaSinMascota();
+//        System.out.println("");
+//
+//        System.out.println("imprime todas las mascotas sin dueno");
+//        serviciosPerro.mascotasSinDueno();
+//        System.out.println("");
+//        
+//        System.out.println("mascota con dueno");
+//        serviciosPerro.mascotasConDueno();
+//        System.out.println("");
+//        
+//        System.out.println("Personas solas: " + serviciosPersona.cuentaPersonasSolas());
+//        System.out.println("Perros solos: " + serviciosPerro.cuentaPerrosSolos());
+// 
     }
 }
