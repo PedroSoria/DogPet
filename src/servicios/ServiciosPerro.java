@@ -1,7 +1,6 @@
 package servicios;
 
 import entidades.Perro;
-import entidades.Persona;
 import java.util.ArrayList;
 
 public class ServiciosPerro {
@@ -9,21 +8,7 @@ public class ServiciosPerro {
     ArrayList<Perro> perros = new ArrayList();
 
     public void creaPerrosInicio() {
-        
-//        Persona persona = new Persona();
-//        persona.setNombre("popo");
-//        
-//        perros.add(new Perro("Pepito", persona));
-//        perros.add(new Perro("Lupin", persona));
-//        perros.add(new Perro("Tintin", persona));
-//        perros.add(new Perro("Tonton", persona));
-//        perros.add(new Perro("Rintinti", persona));
-//        perros.add(new Perro("Giligan", persona));
-//        perros.add(new Perro("Chapi", persona));
-//        perros.add(new Perro("Guzman", persona));
-//        perros.add(new Perro("Loco", persona));
-        
-        
+  
         perros.add(new Perro("Pepito"));
         perros.add(new Perro("Lupin"));
         perros.add(new Perro("Tintin"));
@@ -37,7 +22,6 @@ public class ServiciosPerro {
 
     public int cuentaPerrosSolos() {
         int j = 0;
-
         for (int i = 0; i < perros.size(); i++) {
             if (perros.get(i).getDueno() == null) {
                 j++;
@@ -48,7 +32,7 @@ public class ServiciosPerro {
 
     public void mascotasSinDueno() {
         for (int i = 0; i < perros.size(); i++) {
-            if (perros.get(i).getDueno().isEmpty()) {
+            if (perros.get(i).getDueno() == null) {
                 System.out.println(i + ". " + perros.get(i).getNombre());
             }
         }
@@ -56,15 +40,23 @@ public class ServiciosPerro {
 
     public void mascotasConDueno() {
         for (int i = 0; i < perros.size(); i++) {
-            if (!perros.get(i).getDueno().isEmpty()) {
+            if (perros.get(i).getDueno() != null) {
                 System.out.println(i + ". " + perros.get(i).getNombre() + " Dueño: " + perros.get(i).getNombre());
             }
         }
     }
     
-    
     public Perro traePerro(int n) {
         return perros.get(n);
+    }
+    
+    
+    public void desadoptarDueno(int n) {
+        perros.get(n).setDueno(null);
+    }
+    
+    public void resucitarPersona() {
+        
     }
 
 }

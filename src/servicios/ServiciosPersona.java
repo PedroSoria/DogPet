@@ -19,8 +19,6 @@ public class ServiciosPersona {
         personas.add(new Persona("Gaston"));
     }
 
-    
-    
     public int cuentaPersonasSolas() {
         int j = 0;
         for (int i = 0; i < personas.size(); i++) {
@@ -52,24 +50,20 @@ public class ServiciosPersona {
         do {
             personaSinMascota();
             System.out.println("Seleccionar persona por id");
-            int personaId = 0;
+            int personaId = sc.nextInt();
 
             sPerro.mascotasSinDueno();
             System.out.println("Seleccione un perro por id");
-            int perroId = 0;
+            int perroId = sc.nextInt();
             
             Persona persona = personas.get(personaId);
             Perro perro = sPerro.perros.get(perroId);
-            
-            System.out.println(persona.toString());
-            System.out.println(perro.toString());
             
             persona.setUnPerro(perro);
             perro.setDueno(persona);
             
             System.out.println(persona.toString());
             System.out.println(perro.toString());
-
 
             System.out.println("Desea adoptar otro perro para esta persona");
             r = sc.nextLine();
@@ -80,5 +74,13 @@ public class ServiciosPersona {
     public Persona traePersona(int n) {
         return personas.get(n);
     }
-
+    
+    
+    public void desadoptarPerro(int nPersona, int nPerro) {
+        personas.get(nPersona).getPerros().remove(nPerro);
+    }
+    
+    public void resucitarPerro() {
+        
+    }
 }
