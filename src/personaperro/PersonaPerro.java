@@ -14,15 +14,58 @@ Una vez que la Persona elige el Perro se le asigna, al final deberemos mostrar t
 personas con sus respectivos perros. */
 package personaperro;
 
-import entidades.Menu;
+//import entidades.Menu;
+import entidades.Perro;
+import entidades.Persona;
+import servicios.ServiciosPerro;
+import servicios.ServiciosPersona;
 
 
 
 public class PersonaPerro {
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.Menu();
+        
+        ServiciosPersona serviciosPersona = new ServiciosPersona();
+        ServiciosPerro serviciosPerro = new ServiciosPerro();
+        
+        serviciosPersona.crearPersonasInicio();
+        serviciosPerro.creaPerrosInicio();
+        
+        System.out.println("Seleccionar persona por id");
+        int personaId = 0;
+
+        System.out.println("Seleccione un perro por id");
+        int perroId = 0;
+
+        Persona persona = serviciosPersona.traePersona(personaId);
+        Perro perro = serviciosPerro.traePerro(perroId);
+        
+        
+        
+        serviciosPersona.personaSinMascota();
+        
+        System.out.println(persona.toString());
+        
+        persona.setUnPerro(perro);
+        
+        
+        
+        perro.setDueno(persona);
+        
+        
+        
+        
+        System.out.println(persona.toString());
+        
+        //serviciosPersona.personaConMascota();
+        System.out.println("");
+        serviciosPersona.personaSinMascota();
+        
+        
+        
+        
+
+        
     }
-  
 }

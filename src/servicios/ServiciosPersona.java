@@ -19,6 +19,8 @@ public class ServiciosPersona {
         personas.add(new Persona("Gaston"));
     }
 
+    
+    
     public int cuentaPersonasSolas() {
         int j = 0;
         for (int i = 0; i < personas.size(); i++) {
@@ -29,17 +31,17 @@ public class ServiciosPersona {
         return j;
     }
 
-    public void PersonaSinMascota() {
+    public void personaSinMascota() {
         for (int i = 0; i < personas.size(); i++) {
-            if (personas.get(i).getPerros().contains(null)) {
+            if (personas.get(i).getPerros().isEmpty()) {
                 System.out.println(i + ". " + personas.get(i).getNombre() + " " + personas.get(i).getPerros());
             }
         }
     }
 
-    public void PersonaConMascota() {
+    public void personaConMascota() {
         for (int i = 0; i < personas.size(); i++) {
-            if (!personas.get(i).getPerros().contains(null)) {
+            if (!personas.get(i).getPerros().isEmpty()) {
                 System.out.println(i + ". " + personas.get(i).getNombre() + " " + personas.get(i).getPerros());
             }
         }
@@ -48,7 +50,7 @@ public class ServiciosPersona {
     public void adoptarMascota(ServiciosPerro sPerro) {
         String r;
         do {
-            PersonaSinMascota();
+            personaSinMascota();
             System.out.println("Seleccionar persona por id");
             int personaId = 0;
 
@@ -59,19 +61,24 @@ public class ServiciosPersona {
             Persona persona = personas.get(personaId);
             Perro perro = sPerro.perros.get(perroId);
             
-            System.out.println(persona);
-            System.out.println(perro);
+            System.out.println(persona.toString());
+            System.out.println(perro.toString());
             
             persona.setUnPerro(perro);
             perro.setDueno(persona);
             
-            System.out.println(persona);
-            System.out.println(perro);
+            System.out.println(persona.toString());
+            System.out.println(perro.toString());
 
 
             System.out.println("Desea adoptar otro perro para esta persona");
             r = sc.nextLine();
         } while (r.equalsIgnoreCase("s"));
+    }
+    
+    
+    public Persona traePersona(int n) {
+        return personas.get(n);
     }
 
 }

@@ -15,12 +15,7 @@ public class Perro {
     //Constructor
     public Perro() {
     }
-
-    public Perro(String nombre) {
-        this.nombre = nombre;
-        //this.dueno = null;
-    }
-
+    
     public Perro(String nombre, Persona dueno) {
         this.nombre = nombre;
         this.dueno = dueno;
@@ -50,6 +45,10 @@ public class Perro {
     }
 
 
+
+    public String toStringSinDueno() {
+        return "Perro{" + "nombre=" + nombre + '}';
+    }
 
   
     
